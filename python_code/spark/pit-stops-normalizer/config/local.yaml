@@ -1,0 +1,10 @@
+kafka:
+  server: "localhost:29092"
+  input_topic: "pit_stops"
+  output_topic: "pit_stops_for_agg"
+
+spark:
+  check_point_dir: "check-point-local"
+
+output:
+  trigger_interval: "10 seconds"

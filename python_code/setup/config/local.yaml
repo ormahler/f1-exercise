@@ -1,0 +1,14 @@
+kafka:
+  server: "localhost:29092"
+  drivers_topic: drivers
+  topics_to_create:
+    - pit_stops
+    - pit_stops_for_s3
+    - pit_stops_for_agg
+    - drivers
+
+ksqldb:
+  base_url: "http://localhost:8088"
+
+input:
+  drivers_path: "../../local_data/input/drivers.csv"

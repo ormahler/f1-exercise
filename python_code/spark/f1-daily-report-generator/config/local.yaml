@@ -1,0 +1,8 @@
+input:
+  results_path:  "../../../local_data/input/results.csv"
+  drivers_path:  "../../../local_data/input/drivers.csv"
+  races_path:    "../../../local_data/input/races.csv"
+  circuits_path: "../../../local_data/input/circuits.csv"
+
+output:
+  path: "../../../local_data/output/f1-daily-report"

@@ -1,0 +1,5 @@
+pandas
+pyspark==3.4.0
+requests==2.0.0
+PyYAML==6.0
+kafka-python==2.0.2
