@@ -52,7 +52,7 @@ def main():
          )
 
     races_df = spark.read.option("header", "true").csv(races_path)\
-        .selectExpr("raceId AS race_id", "circuitId AS circuit_id")
+        .selectExpr("raceId AS race_id", "circuitId AS circuit_id", "name AS race_name")
     circuit_df = spark.read.option("header", "true").csv(circuits_path)\
         .selectExpr("circuitId AS circuit_id", "name AS circuit_name")
 
