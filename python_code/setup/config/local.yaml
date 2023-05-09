@@ -11,4 +11,4 @@ ksqldb:
   base_url: "http://localhost:8088"
 
 input:
-  drivers_path: "../../local_data/input/drivers.csv"
+  drivers_path: "local_data/input/drivers.csv"

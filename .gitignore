@@ -162,3 +162,5 @@ cython_debug/
 local_data/output/*
 */check-point-local/*
 .DS_Store
+venv1
+check-point-local/*

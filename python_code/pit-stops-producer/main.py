@@ -2,12 +2,13 @@ import pandas as pd
 from kafka import KafkaProducer
 import json
 
-from python_code.common.config_manager.load_config import get_config
+from common.config_manager.load_config import get_config
 from utils.utils import generate_record_id
 import os
 
 
 def main():
+    print("Starting pit-stops-producer")
     env = os.getenv('F1_ENV')
     config = get_config(env)
 
@@ -27,9 +28,10 @@ def main():
     producer = KafkaProducer(bootstrap_servers=[kafka_server],
                              value_serializer=lambda x: json.dumps(x).encode('utf-8'),
                              acks='all')
-
+    print(f"Writing to {kafka_output_topic} topic")
     for d in pit_stops:
         producer.send(kafka_output_topic, d, str(d['id']).encode())
+    print(f"Finished writing to {kafka_output_topic} topic")
 
 
 if __name__ == '__main__':

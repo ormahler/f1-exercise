@@ -2,7 +2,7 @@ import os
 
 from pyspark.sql import SparkSession
 
-from python_code.common.config_manager.load_config import get_config
+from common.config_manager.load_config import get_config
 
 
 def main():

@@ -3,7 +3,7 @@ kafka:
   output_topic: "pit_stops"
 
 input:
-  pit_stops_file_name: "../../local_data/input/pit_stops.csv"
-  races_file_name: "../../local_data/input/races.csv"
+  pit_stops_file_name: "local_data/input/pit_stops.csv"
+  races_file_name: "local_data/input/races.csv"
 
 

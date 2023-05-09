@@ -4,7 +4,7 @@ import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import sort_array, col, lit, min_by, collect_set, concat, struct
 
-from python_code.common.config_manager.load_config import get_config
+from common.config_manager.load_config import get_config
 
 
 def main():
@@ -17,6 +17,7 @@ def main():
     races_path = config['input']['races_path']
     drivers_path = config['input']['drivers_path']
     output_path = config['output']['path']
+    output_format = config['output']['format']
 
     spark = SparkSession \
         .builder \
@@ -64,7 +65,9 @@ def main():
         .write\
         .mode("overwrite")\
         .partitionBy("dateint_pt")\
-        .parquet(output_path)
+        .option("header", "true")\
+        .format(output_format)\
+        .save(output_path)
 
 
 if __name__ == '__main__':
