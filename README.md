@@ -15,9 +15,9 @@ in order to run the solution follow those steps:
 - set env var: `export F1_ENV=local`
 - set up kafka & ksaql-db:  `python3 python_code/setup/main.py`
 - run pit-stops-producer: `python3 python_code/pit-stops-producer/main.py`
-- run pit-stops-normalizer: `python3 python_code/spark/pit-stops-normalizer/main.py` -- 
+- run f1-daily-report-generator- `python3 python_code/spark/f1-daily-report-generator/main.py` 
+  - the output will be saved to [f1-daily-report](local_data%2Foutput%2Ff1-daily-report)
+- run pit-stops-normalizer: `python3 python_code/spark/pit-stops-normalizer/main.py` 
   - results will be saved to ksqldb where the RT enrichment will occur, to check the results use:
     - connect to ksql-db: `docker exec -it ksqldb-cli ksql http://ksqldb-server:8088`
-    - run the following query: `SELECT * FROM enriched_drivers_table EMIT CHANGES;` 
-- run f1-daily-report-generator- `python3 python_code/spark/f1-daily-report-generator/main.py`- 
-  - the output will be saved to [f1-daily-report](local_data%2Foutput%2Ff1-daily-report)
+    - run the following query: `SELECT * FROM enriched_drivers_table EMIT CHANGES;`

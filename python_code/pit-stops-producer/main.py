@@ -31,6 +31,7 @@ def main():
     print(f"Writing to {kafka_output_topic} topic")
     for d in pit_stops:
         producer.send(kafka_output_topic, d, str(d['id']).encode())
+    producer.flush()
     print(f"Finished writing to {kafka_output_topic} topic")
 
 
